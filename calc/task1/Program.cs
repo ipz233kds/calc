@@ -24,32 +24,23 @@ class Program
 
     static double Calculate(double a, double b, char op)
     {
-        double result = 0;
+        switch (op)
+        {
+            case '+': return Add(a, b);
+            case '-': return Subtract(a, b);
+            case '*': return Multiply(a, b);
+            case '/': return Divide(a, b);
+            default: throw new ArgumentException("Невідома операція!");
+        }
+    }
+    static double Add(double a, double b) => a + b;
+    static double Subtract(double a, double b) => a - b;
+    static double Multiply(double a, double b) => a * b;
 
-        if (op == '+')
-        {
-            result = a + b;
-        }
-        else if (op == '-')
-        {
-            result = a - b;
-        }
-        else if (op == '*')
-        {
-            result = a * b;
-        }
-        else if (op == '/')
-        {
-            if (b != 0)
-                result = a / b;
-            else
-                Console.WriteLine("Помилка: Ділення на нуль!");
-        }
-        else
-        {
-            Console.WriteLine("Невідома операція!");
-        }
-
-        return result;
+    static double Divide(double a, double b)
+    {
+        if (b == 0)
+            throw new DivideByZeroException("Помилка: Ділення на нуль!");
+        return a / b;
     }
 }
