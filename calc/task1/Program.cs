@@ -7,12 +7,10 @@ class Program
         Console.WriteLine("Простий калькулятор");
 
         Console.Write("Введіть перше число: ");
-        string num1Str = Console.ReadLine();
-        double num1 = Convert.ToDouble(num1Str);
+        double num1 = Convert.ToDouble(Console.ReadLine());
 
         Console.Write("Введіть друге число: ");
-        string num2Str = Console.ReadLine();
-        double num2 = Convert.ToDouble(num2Str);
+        double num2 = Convert.ToDouble(Console.ReadLine());
 
         Console.Write("Оберіть операцію (+, -, *, /): ");
         char operation = Console.ReadKey().KeyChar;
