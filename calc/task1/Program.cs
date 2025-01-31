@@ -24,14 +24,14 @@ class Program
 
     static double Calculate(double a, double b, char op)
     {
-        switch (op)
+        return op switch
         {
-            case '+': return Add(a, b);
-            case '-': return Subtract(a, b);
-            case '*': return Multiply(a, b);
-            case '/': return Divide(a, b);
-            default: throw new ArgumentException("Невідома операція!");
-        }
+            '+' => Add(a, b),
+            '-' => Subtract(a, b),
+            '*' => Multiply(a, b),
+            '/' => Divide(a, b),
+            _ => throw new ArgumentException("Невідома операція!")
+        };
     }
     static double Add(double a, double b) => a + b;
     static double Subtract(double a, double b) => a - b;
